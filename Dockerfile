@@ -26,8 +26,16 @@ RUN chown -R www-data:www-data /var/www/html \
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 # Corre Composer, limpia config y genera clave de Laravel
-RUN composer install --no-interaction --prefer-dist --optimize-autoloader \
- && chmod -R 775 storage bootstrap/cache \
- && chown -R www-data:www-data storage bootstrap/cache \
- && php artisan config:clear \
- && php artisan key:generate
+# Paso 1: Instalar dependencias
+RUN composer install --no-interaction --prefer-dist --optimize-autoloader
+
+# Paso 2: Dar permisos
+RUN chmod -R 775 storage bootstrap/cache \
+ && chown -R www-data:www-data storage bootstrap/cache
+
+# Paso 3: Limpiar configuración (requiere .env o vars en Render)
+RUN php artisan config:clear
+
+# Paso 4: Generar clave de la app (requiere .env o APP_KEY vacío)
+RUN php artisan key:generate
+
