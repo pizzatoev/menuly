@@ -1,0 +1,76 @@
+
+:root {
+  --rojo-menuly: #ae1414;
+  --rojo-oscuro: #901819;
+  --gris-suave: #d9d9d9;
+}
+
+.bg-menuly {
+  background-color: var(--rojo-menuly) !important;
+}
+
+.text-menuly {
+  color: var(--rojo-menuly);
+}
+
+.btn-menuly {
+  background-color: var(--rojo-menuly);
+  color: white;
+  font-weight: bold;
+}
+
+.btn-menuly:hover {
+  background-color: var(--rojo-oscuro);
+}
+
+.hero-section {
+  background-color: var(--rojo-menuly);
+  padding: 80px 0;
+}
+.bg-menuly {
+  background-color: #ae1414;
+}
+
+.btn-menuly {
+  background-color: #ae1414;
+  color: white;
+  font-weight: bold;
+  border: none;
+}
+
+.btn-menuly:hover {
+  background-color: #901819;
+  color: white;
+}
+.bg-menuly {
+  background-color: #ae1414;
+}
+
+.text-menuly {
+  color: #ae1414;
+}
+
+.hero-slide {
+  min-height: 30vh;
+  align-items: center;
+}
+
+.hero-slide img {
+  max-height: 300px;
+  object-fit: contain;
+}
+.btn-menuly {
+  background-color: #ae1414;
+  color: white;
+  font-weight: bold;
+  border: none;
+}
+
+.btn-menuly:hover {
+  background-color: #901819;
+}
+
+.modal-content {
+  max-width: 500px;
+  margin: auto;
+}
