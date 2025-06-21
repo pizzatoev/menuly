@@ -33,9 +33,13 @@ RUN composer install --no-interaction --prefer-dist --optimize-autoloader
 RUN chmod -R 775 storage bootstrap/cache \
  && chown -R www-data:www-data storage bootstrap/cache
 
-# Paso 3: Limpiar configuración (requiere .env o vars en Render)
+# Copiar .env para evitar errores
+RUN cp .env.example .env
+
+# Limpiar configuración
 RUN php artisan config:clear
 
-# Paso 4: Generar clave de la app (requiere .env o APP_KEY vacío)
+# Generar clave Laravel
 RUN php artisan key:generate
+
 
